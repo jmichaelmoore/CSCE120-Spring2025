@@ -1,15 +1,11 @@
 #include <iostream>
+#include "functions.h"
 
 using std::cin, std::cout, std::endl;
 
 int main() {
     int num = 0;
-    int sum = 0;
     cin >> num;
-    while (num != 0) {
-        int digit = num%10;
-        sum += digit;
-        num /= 10; // num = num / 10;
-    }
-    cout << "sum: " << sum << endl;
+
+    cout << "sum: " << sumOfDigits(num) << endl;
 }

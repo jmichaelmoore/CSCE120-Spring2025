@@ -1,9 +1,9 @@
 #include <iostream>
 #include "vectorFunctions.h"
 
-using std::cin, std::cout, std::endl;
+using std::cin, std::cout, std::endl, std::vector;
 
-std::vector<int> loadRandom(std::vector<int> v, size_t size) {
+vector<int> loadRandom(vector<int> v, size_t size) {
     // let's limit to three digit numbers
     //cout << "starting loadRandom..." << endl;
 }
