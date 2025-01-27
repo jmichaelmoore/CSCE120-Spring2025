@@ -8,18 +8,22 @@ vector<int> loadRandom(vector<int> v, size_t size) {
     //cout << "starting loadRandom..." << endl;
 }
 
-std::vector<int> insert(std::vector<int> v, int val, size_t index) {
+vector<int> insert(vector<int> v, int val, size_t index) {
     //cout << "starting insert..." << endl;
     //cout << "val: " << val << endl;
     //cout << "index: " << index << endl;
 
 }
 
-int getMax(std::vector<int> v) {
+vector<int> remove(vector<int> v, int val) { // first instance of
+
+}
+
+int getMax(vector<int> v) {
     //cout << "starting getMax..." << endl;
 }
 
-void print(std::vector<int> v) {
+void print(vector<int> v) {
     // print "empty vector" if there is nothing in the vector
     //cout << "starting print..." << endl;
 }
