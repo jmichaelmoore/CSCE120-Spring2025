@@ -92,13 +92,22 @@ vector<vector<Pixel>> loadImage(const string filename)
 
   // create empty image vector of needed size
   // TODO
+  vector<vector<Pixel>> image(fileWidth, vector<Pixel>(fileHeight, {0, 0, 0}));
+
 
   // read the color values into the 2D array in Column Major Order
   // TODO
+  for (size_t row=0; row<fileHeight; ++row) {
+    for (size_t col=0; col<fileWidth; +=col) {
+      unsigned int r, g, b;
+      ifs >> r >> g >> b;
+      image.at(col).at(row) = {r, g, b};
+    }
+  }
 
   // return image
   // TODO
-  //return image;
+  return image;
 }
 
 /*  Function grayscale

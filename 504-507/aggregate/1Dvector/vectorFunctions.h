@@ -15,9 +15,9 @@
 //   print
 
 // these are declarations
-std::vector<int> loadRandom(std::vector<int> v, size_t size);
+std::vector<int> loadRandom(size_t size);
 std::vector<int> insert(std::vector<int> v, int val, size_t index);
-std::vector<int> remove(std::vector<int> v, int val); // first instance of
+std::vector<int> removeFirstOf(std::vector<int> v, int val); // first instance of
 int getMax(std::vector<int>);
 void print(std::vector<int>);
 

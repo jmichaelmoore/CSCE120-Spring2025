@@ -33,7 +33,7 @@ int main() {
       case 'L':
         cout << "Input number of random values to load: ";
         cin >> size;
-        v = loadRandom(v, size);
+        v = loadRandom(size);
         break;
       case 'I':
         cout << "Input value to insert: ";
@@ -50,7 +50,7 @@ int main() {
       case 'F':
         cout << "Input value to delete: ";
         cin >> num;
-        /*v = removeFirstOf(v, num);*/
+        v = removeFirstOf(v, num);
         break;
       case 'X':
         cout << "Max: " << getMax(v);
