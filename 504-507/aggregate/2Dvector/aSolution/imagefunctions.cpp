@@ -98,7 +98,7 @@ vector<vector<Pixel>> loadImage(const string filename)
   // read the color values into the 2D array in Column Major Order
   // TODO
   for (size_t row=0; row<fileHeight; ++row) {
-    for (size_t col=0; col<fileWidth; +=col) {
+    for (size_t col=0; col<fileWidth; ++col) {
       unsigned int r, g, b;
       ifs >> r >> g >> b;
       image.at(col).at(row) = {r, g, b};
@@ -120,6 +120,15 @@ vector<vector<Pixel>> grayscaleImage(vector<vector<Pixel>> image)
   // iterate through 2d image of Pixels and convert them to grayscale
   // use opposite outer loop than load and output just to be different
   // TODO
+  for (size_t col=0; col<image.size(); ++col) {
+    for (size_t row=0; row<image.at(col).size(); ++row) {
+      unsigned int grey = image.at(col).at(row).r;
+      grey += image.at(col).at(row).g;
+      grey += image.at(col).at(row).b;
+      grey /= 3;
+      image.at(col).at(row) = { grey, grey, grey };
+    }
+  }
   
   return image;
  }
@@ -171,11 +180,19 @@ void outputImage(const string filename, vector<vector<Pixel>> image)
 
   // output width and height, don't forget to separate by a space
   // TODO 
-  ofs << "WIDTH" << " " << "HEIGHT" << endl;
+  ofs << image.size() << " " << image.at(0).size() << endl;
 
   // output max color value, for us 255
   ofs << 255 << endl;
 
   // output from column major order array into row major PPM file
   // TODO
+  for (size_t row=0; row<image.at(0).size(); ++row) {
+    for (size_t col=0; col<image.size(); ++col) {
+      ofs << image.at(col).at(row).r << " ";
+      ofs << image.at(col).at(row).g << " ";
+      ofs << image.at(col).at(row).b << " ";
+    }
+    ofs << endl;
+  }
 }
