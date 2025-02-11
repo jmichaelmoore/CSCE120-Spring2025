@@ -12,6 +12,13 @@ int main() {
     do {
         cout << "Enter index to show letter or 9999 to exit: ";
         cin >> index;
-        cout << word.at(index) << " is the letter at index " << index << endl;
+        if (index != 9999) {
+            try {
+                cout << word.at(index) << " is the letter at index " << index << endl;
+            }
+            catch (std::out_of_range& e) {
+                cout << "Your index must be less than " << word.size() << endl;
+            }
+        }
     } while (index != 9999);
 }

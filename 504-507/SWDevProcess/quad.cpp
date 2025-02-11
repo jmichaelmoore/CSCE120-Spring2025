@@ -41,13 +41,30 @@ void processImaginary(double a, double b, double disc) {
     cout << "x = " << real << " - " << img1 << "i" << endl;
 }
 
+void processReal(double a, double b, double c, double disc) {
+    double x1 = (-b + sqrt(disc))/(2*a);
+    cout << "x = " << x1 << endl;
+    double zero1 = a*x1*x1 + b*x1 + c;
+    if (fabs(zero1 - 0) > 0.0000001) {
+        cout << "x1 did not check" << endl;
+    }
+    if (disc != 0) {
+        double x2 = (-b - sqrt(disc))/(2*a);
+        cout << "x = " << x2 << endl;
+        double zero2 = a*x2*x2 + b*x2 + c;
+        if (fabs(zero2 - 0) > 0.0000001) {
+            cout << "x2 did not check" << endl;
+        }
+        }
+}
+
 void solveQuadratic(double a, double b, double c) {
     double disc = b*b - 4*a*c;
     if (disc < 0) {
         processImaginary(a, b, disc);
     }
     else {
-        //processReal(a, b, c, disc);
+        processReal(a, b, c, disc);
     }
 }
 

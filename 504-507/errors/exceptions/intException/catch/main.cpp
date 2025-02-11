@@ -21,7 +21,28 @@ int main() {
     cout << "enter version a or b: ";
     char version = 'c';
     cin >> version;
-    y();
-    z();
+    try {
+        if (version == 'a') {
+            y();
+            z();
+        }
+        else if (version == 'b') {
+            z();
+            y();
+        }
+        else {
+            throw 'c';
+        }
+    }
+    catch (int i) {
+        cout << i << endl;
+    }
+    catch (char c) {
+        cout << c << endl;
+    }
+    catch (...) {
+        cout << "something" << endl;
+    }
+
     cout << "end main" << endl;
 }
