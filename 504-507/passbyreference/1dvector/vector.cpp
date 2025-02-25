@@ -40,7 +40,7 @@ int main() {
         cin >> num;
         cout << "Input index to insert: ";
         cin >> index;
-          v = insert(v, num, index);
+          insert(v, num, index);
         break;
       case 'R':
         cout << "Input index to delete: ";
@@ -50,7 +50,7 @@ int main() {
       case 'F':
         cout << "Input value to delete: ";
         cin >> num;
-        v = removeFirstOf(v, num);
+        removeFirstOf(v, num);
         break;
       case 'X':
         cout << "Max: " << getMax(v);

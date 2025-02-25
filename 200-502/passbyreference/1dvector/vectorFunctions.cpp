@@ -14,7 +14,7 @@ vector<int> loadRandom(size_t size) {
     return v;
 }
 
-vector<int> insert(vector<int> v, int val, size_t index) {
+void insert(vector<int>& v, int val, size_t index) {
     //cout << "starting insert..." << endl;
     //cout << "val: " << val << endl;
     //cout << "index: " << index << endl;
@@ -24,10 +24,9 @@ vector<int> insert(vector<int> v, int val, size_t index) {
     else {
         v.insert(v.begin()+index, val);
     }
-    return v;
 }
 
-vector<int> removeFirstOf(vector<int> v, int val) { // first instance of
+void removeFirstOf(vector<int> v, int val) { // first instance of
     size_t i = 0;
     while (i < v.size() && v.at(i) != val) {
         ++i; // or i++;
@@ -38,10 +37,9 @@ vector<int> removeFirstOf(vector<int> v, int val) { // first instance of
         // remove the value
         v.erase(v.begin()+i);
     }
-    return v;
 }
 
-int getMax(vector<int> v) {
+int getMax(const vector<int>& v) {
     //cout << "starting getMax..." << endl;
     int maxVal;
     maxVal = v.at(0);
@@ -53,7 +51,7 @@ int getMax(vector<int> v) {
     return maxVal;
 }
 
-void print(vector<int> v) {
+void print(const vector<int>& v) {
     // print "empty vector" if there is nothing in the vector
     //cout << "starting print..." << endl;
     for (size_t i=0; i<v.size(); ++i) {
