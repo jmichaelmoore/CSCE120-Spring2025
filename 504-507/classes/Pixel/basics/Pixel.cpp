@@ -4,3 +4,9 @@
 // constructors
 //  - default
 //  - all given
+
+class Pixel {
+    unsigned short r;
+    unsigned short g;
+    unsigned short b;
+};
