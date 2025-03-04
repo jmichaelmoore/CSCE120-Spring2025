@@ -50,3 +50,30 @@ Pixel::Pixel(unsigned short r, unsigned short g, unsigned short b) :
     }
 }
 
+Pixel Pixel::operator+(const Pixel& rhs) {
+    Pixel p;
+    p.r = (this->r + rhs.r)/2;
+    p.g = (this->g + rhs.g)/2;
+    p.b = (this->b + rhs.b)/2;
+    return p;
+}
+
+/*Pixel& Pixel::operator=(const Pixel& rhs) {
+    this->r = rhs.r;
+    this->g = rhs.g;
+    this->b = rhs.b;
+    return *this;
+}*/
+
+bool Pixel::operator==(const Pixel&rhs) {
+    return (this->r == rhs.r &&
+            this->g == rhs.g &&
+            this->b == rhs.b);
+}
+
+Pixel& Pixel::operator-() {
+    this->r = 255 - this->r;
+    this->g = 255 - this->g;
+    this->b = 255 - this->b;
+    return *this;
+}
