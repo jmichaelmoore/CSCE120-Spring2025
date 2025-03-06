@@ -17,19 +17,21 @@ public:
 	Date();
 	Date(int year, int month, int day);
 		std::string to_string();
-		int getDay();
+		int getDay() const;
 		void setDay(int day);
-		int getMonth();
+		int getMonth() const;
 		void setMonth(int month);
-		int getYear();
+		int getYear() const;
 		void setYear(int year);
 		// add == declaration
-		bool operator==(const Date& rhs);
+		bool operator==(const Date&) const;
 		// add < declaration
-		bool operator<(const Date& rhs);
+		bool operator<(const Date&) const;
 		// lhs < rhs
 		// lhs: left hand side
 		// rhs: right hand side
 };
+
+std::ostream& operator<<(std::ostream& os, const Date& d);
 
 #endif

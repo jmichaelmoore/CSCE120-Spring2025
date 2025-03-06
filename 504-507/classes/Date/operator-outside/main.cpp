@@ -18,4 +18,6 @@ int main() {
   cout << "b < a: " << std::boolalpha << (b < a) << endl;
   cout << "a < c: " << std::boolalpha << (a < c) << endl;
   cout << "c < a: " << std::boolalpha << (c < a) << endl;
+  cout << a << endl;
+  cout << b << endl;
 }

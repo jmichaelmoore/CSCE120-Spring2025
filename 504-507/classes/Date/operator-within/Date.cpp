@@ -125,8 +125,36 @@ void Date::setYear(int year) {
 }
 
 // add == definition
+bool Date::operator==(const Date& rhs) {
+	if (this->year != rhs.year) {
+		return false;
+	}
+	if (this->month != rhs.month) {
+		return false;
+	}
+	if (this->day != rhs.day) {
+		return false;
+	}
+	return true;
+}
 
 // add < declaration
+bool Date::operator<(const Date& rhs) {
+	if (this->year < rhs.year) {
+		return true;
+	} 
+	else if (this->year == rhs.year) {
+		if (this->month < rhs.month) {
+			return true;
+		}
+		else if (this->month == rhs.month) {
+			if (this->day < rhs.day) {
+				return true;
+			}
+		}
+	}
+	return false;
+}
 
 // lhs < rhs
 // lhs: left hand side

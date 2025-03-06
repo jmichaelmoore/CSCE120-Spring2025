@@ -24,7 +24,9 @@ public:
 		int getYear();
 		void setYear(int year);
 		// add == declaration
+		bool operator==(const Date&);
 		// add < declaration
+		bool operator<(const Date&);
 		// lhs < rhs
 		// lhs: left hand side
 		// rhs: right hand side

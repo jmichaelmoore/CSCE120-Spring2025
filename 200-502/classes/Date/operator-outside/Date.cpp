@@ -88,7 +88,7 @@ std::string Date::to_string() {
   return oss.str();
 }
 
-int Date::getDay() {
+int Date::getDay() const {
 	return day;
 }
 
@@ -100,7 +100,7 @@ void Date::setDay(int day) {
 		throw runtime_error("Invalid Day");
 }
 
-int Date::getMonth() {
+int Date::getMonth() const {
 	return month;
 }
 
@@ -112,7 +112,7 @@ void Date::setMonth(int month) {
 		throw runtime_error("Invalid Month");
 }
 
-int Date::getYear() {
+int Date::getYear() const {
 	return year;
 }
 
@@ -125,7 +125,7 @@ void Date::setYear(int year) {
 }
 
 // add == definition
-bool Date::operator==(const Date& rhs) {
+bool Date::operator==(const Date& rhs) const {
 	if (this->year != rhs.year) {
 		return false;
 	}
@@ -139,7 +139,7 @@ bool Date::operator==(const Date& rhs) {
 }
 
 // add < declaration
-bool Date::operator<(const Date& rhs) {
+bool Date::operator<(const Date& rhs) const {
 	if (this->year < rhs.year) {
 		return true;
 	}
@@ -161,3 +161,7 @@ bool Date::operator<(const Date& rhs) {
 // lhs: left hand side
 // rhs: right hand side
 
+std::ostream& operator<<(std::ostream& os, const Date& d) {
+	os << d.getMonth() << "/" << d.getDay() << "/" << d.getYear();
+	return os;
+}
