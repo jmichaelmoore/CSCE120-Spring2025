@@ -18,7 +18,8 @@ public:
   bool operator==(const Complex& rhs) const;
   Complex operator+(const Complex& rhs) const;
   Complex& operator+=(const Complex& rhs);
-  Complex& operator-();
+  Complex& operator-(); // autograder
+  //Complex operator-(); // probably what it should be
 };
 
 std::ostream& operator<<(std::ostream& os, const Complex& rhs);

@@ -28,6 +28,12 @@ Complex& Complex::operator-() {
   return *this;
 }
 
+/*  // probably what it should be
+Complex Complex::operator-() {
+  return Complex(-this->real, -this->imag);
+}
+*/
+
 std::ostream& operator<<(std::ostream& os, const Complex& rhs) {
   os << rhs.getReal();
   if (rhs.getImaginary() < 0) {
