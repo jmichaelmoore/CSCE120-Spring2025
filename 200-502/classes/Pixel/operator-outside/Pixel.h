@@ -10,7 +10,7 @@ public:
     // constructors
     Pixel() : r(0), g(0), b(0) {}
     Pixel(unsigned short v);
-    Pixel(unsigned int r, unsigned int g, unsigned int b); 
+    Pixel(unsigned int r, unsigned int g, unsigned int b);
 
     // getters and setters
     unsigned short getR() const { return r; }
