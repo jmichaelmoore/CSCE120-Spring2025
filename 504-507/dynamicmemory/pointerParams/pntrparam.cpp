@@ -6,7 +6,7 @@ void redecorate(int* x, int newVal) {
     *x = newVal;
 }
 
-void needToMove(int* x) { 
+void needToMove(int*& x) { 
     // actual parameter for x should be assigned a new memory address
     x = new int(*x);
 }
@@ -40,5 +40,9 @@ int main() {
     cout << endl;
 
     delete a;
+    if (a != b)
+        delete b;
+    a = nullptr;
+    b = nullptr;
 
 }
