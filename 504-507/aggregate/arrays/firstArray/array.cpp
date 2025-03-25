@@ -28,4 +28,6 @@ int main() {
     // print values from array through function (includes traversal)
     printAry(ary, size);
     cout << endl;
+    //cout << "bad access: " << endl;
+    //cout << ary[4918473247] << endl;
 }

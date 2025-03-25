@@ -4,16 +4,39 @@
 using std::cin, std::cout, std::endl;
 
 void loadRandom(int ary[], unsigned int size) {
+    // let's limit to three digit numbers
+    //cout << "starting loadRandom..." << endl;
+    for (size_t i=0; i<size; ++i) {
+        int num = rand()%1000;
+        ary[i] = num;
+    }
 }
 
 void insert(int val, unsigned int index, 
           int ary[], unsigned int& size) {
   // We'll do together
+  if (size == CAPACITY) {
+    // throw exception
+  }
+  if (index > size) {
+    index = size; // or throw exception
+  }
+  for (unsigned int i=0; i < size-index; ++i) {
+    ary[size-i] = ary[size-i-1];
+  }
+  ary[index] = val;
+  size++;
 }
 
 void removeAtIndex(unsigned int index, 
           int ary[], unsigned int& size) {
-
+  if (index >= size) {
+    // throw exception
+  }
+  for (unsigned int i=index; i<size-1; ++i) {
+    ary[i] = ary[i+1];
+  }
+  size--;
 }
 
 void removeFirstOf(int val, 
@@ -42,3 +65,8 @@ unsigned int countVal(int val, const int ary[], unsigned int size) {
 }
 
 // print including empty
+void print(const int ary[], unsigned int size) {
+  for (unsigned int i=0; i<size; ++i) {
+    cout << ary[i] << endl;
+  }
+}

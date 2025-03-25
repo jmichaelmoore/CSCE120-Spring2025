@@ -4,16 +4,41 @@
 using std::cin, std::cout, std::endl;
 
 void loadRandom(int ary[], unsigned int size) {
+  // should throw an exception if size > SIZE
+  for (unsigned int i=0; i<size; ++i) {
+    int val = rand()%1000;
+    ary[i] = val;
+  }
 }
 
 void insert(int val, unsigned int index, 
           int ary[], unsigned int& size) {
   // We'll do together
+  // check to make sure index is in bounds
+  if (size == CAPACITY) {
+    // throw an exception
+  }
+  if (index > size) {
+    index = size;
+  }
+
+  for (unsigned int i = 0; i <= size-index; ++i) {
+    ary[size-i+1] = ary[size-i];
+  }
+  ary[index] = val;
+  size++;
+
 }
 
 void removeAtIndex(unsigned int index, 
           int ary[], unsigned int& size) {
-
+  if (index >= size) {
+    return; // or throw an exception
+  }
+  for (unsigned int i = index; i<size-1; ++i) {
+    ary[i] = ary[i+1];
+  }
+  size--;
 }
 
 void removeFirstOf(int val, 
@@ -42,3 +67,8 @@ unsigned int countVal(int val, const int ary[], unsigned int size) {
 }
 
 // print including empty
+void print(const int ary[], unsigned int size) {
+  for (unsigned int i=0; i<size; ++i) {
+    cout << ary[i] << endl;
+  }
+}

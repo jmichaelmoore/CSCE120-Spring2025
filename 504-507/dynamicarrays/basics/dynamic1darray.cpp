@@ -3,8 +3,8 @@
 
 using std::cout, std::cin, std::endl;
 
-double max(double[], unsigned int);
-void printAry(double[], unsigned int);
+double max(const double[], unsigned int);
+void printAry(const double[], unsigned int);
 
 int main() {
   cout << "How many values will you enter?";
@@ -17,6 +17,7 @@ int main() {
   
   // define pointer to appropriate datatype (double)
   // allocate memory for the array with "new"
+  double* ary = new double[size];
 
   // initialize
   for (unsigned int i=0; i<size; ++i) {
@@ -46,6 +47,8 @@ int main() {
   cout << endl;
 
   // release memory for the array with "delete[]"
+  delete [] ary;
+  ary = nullptr;
   
 
 }
@@ -63,7 +66,7 @@ double max(const double nums[], unsigned int size) {
   return max;
 }
 
-void printAry(cconst double* nums, unsigned int size) {
+void printAry(const double* nums, unsigned int size) {
   if (size == 0) {
     cout << endl;
     return;
