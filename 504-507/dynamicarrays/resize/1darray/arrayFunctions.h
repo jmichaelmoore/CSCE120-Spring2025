@@ -14,7 +14,7 @@
 // getMin 
 // count val
 
-void resize(int*& ary, unsigned int& capacity);
+void resize(int*& ary, unsigned int& capacity); 
 void print(const int ary[], unsigned int size);
 void loadRandom(int*& ary, unsigned int size, unsigned int& capacity);
 void insert(int val, unsigned int index, 

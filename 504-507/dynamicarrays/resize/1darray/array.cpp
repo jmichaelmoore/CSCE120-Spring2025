@@ -10,7 +10,7 @@ void printMenu();
 // It would be good to break main into more functions...
 //   However, we'll need to learn more about pass by reference
 //     before we can do that.
-int main() {
+int main() { 
   srand(time(NULL));
   
   //int ary[CAPACITY] = {0}; // initialize to all zeroes

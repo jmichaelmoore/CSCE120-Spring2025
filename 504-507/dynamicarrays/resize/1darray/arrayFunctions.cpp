@@ -3,7 +3,7 @@
 
 using std::cin, std::cout, std::endl;
 
-void resize(int*& ary, unsigned int& capacity) {
+void resize(int*& ary, unsigned int& capacity)  {
   unsigned int newcapacity = capacity * 2;
 
   int* temp = new int[newcapacity];
