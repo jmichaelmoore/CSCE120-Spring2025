@@ -9,9 +9,10 @@ void resize(int*& ary, unsigned int& capacity) {
     newCapacity = 1;
   }
   int* temp = new int[newCapacity];
-  if (temp == nullptr) {
-    // throw exception
-  }
+  // if (temp == nullptr) {
+  //   // throw exception
+  //   throw std::bad_alloc("Unable to allocate new array");
+  // }
 
   // if capacity is 0, then we'll never get into the loop so will never try to dereference nullptr
   for (unsigned int i=0; i<capacity; ++i) {
@@ -20,7 +21,7 @@ void resize(int*& ary, unsigned int& capacity) {
 
   delete [] ary; // deleting nullptr is not an error
 
-  capacity *= 2;
+  capacity = newCapacity;
   ary = temp;
   temp = nullptr;
 }
@@ -28,10 +29,6 @@ void resize(int*& ary, unsigned int& capacity) {
 void loadRandom(int*& ary, unsigned int size, unsigned int& capacity) {
   // should throw an exception if size > SIZE
   capacity = size;
-  if (ary != nullptr) {
-    delete [] ary;
-    ary = nullptr;
-  }
   ary = new int[size];
   for (unsigned int i=0; i<size; ++i) {
     int val = rand()%1000;
@@ -46,15 +43,21 @@ void insert(int val, unsigned int index,
   if (index > size) {
     index = size;
   }
+  cout << "capacity before: " << capacity << endl;
 
   // do I have enough space
   if (size == capacity) {
     resize(ary, capacity);
   }
 
-  for (unsigned int i = 0; i <= size-index; ++i) {
-    ary[size-i+1] = ary[size-i];
+  cout << "capacity after: " << capacity << endl;
+
+
+// shift value to the right 
+  for (unsigned int i = 1; i <= size-index; ++i) {
+    ary[size-i + 1] = ary[size-i];
   }
+  // add new item to the index
   ary[index] = val;
   size++;
 

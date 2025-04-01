@@ -5,15 +5,22 @@ using std::cin, std::cout, std::endl;
 
 void resize(int*& ary, unsigned int& capacity)  {
   unsigned int newcapacity = capacity * 2;
+  if (capacity == 0) {
+    newcapacity = 1;
+  }
 
+  // allocate new array
   int* temp = new int[newcapacity];
 
+  // copy
   for (unsigned int i=0; i<capacity; ++i) {
     temp[i] = ary[i];
   }
 
+  // delete old array
   delete [] ary;
 
+  // updates
   ary = temp;
   capacity = newcapacity;
   temp = nullptr;
@@ -42,15 +49,19 @@ void loadRandom(int*& ary, unsigned int size, unsigned int& capacity) {
 }
 
 void insert(int val, unsigned int index, 
-          int ary[], unsigned int& size, unsigned int& capacity) {
+          int*& ary, unsigned int& size, unsigned int& capacity) {
   // We'll do together
   if (index > size) {
     index = size; // or throw exception
   }
 
+  cout << "capacity before: " << capacity << endl;
+
   if (size == capacity) {
     resize(ary, capacity);
   }
+
+  cout << "capacity after: " << capacity << endl;
 
   for (unsigned int i=0; i < size-index; ++i) {
     ary[size-i] = ary[size-i-1];

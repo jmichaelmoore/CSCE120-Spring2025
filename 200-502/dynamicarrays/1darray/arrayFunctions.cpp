@@ -25,7 +25,7 @@ void insert(int val, unsigned int index,
   }
 
   for (unsigned int i = 0; i <= size-index; ++i) {
-    ary[size-i+1] = ary[size-i];
+    ary[size-i] = ary[size-i-1]; // item on right = item on left
   }
   ary[index] = val;
   size++;
