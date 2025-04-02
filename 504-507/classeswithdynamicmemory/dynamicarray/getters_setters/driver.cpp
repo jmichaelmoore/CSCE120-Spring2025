@@ -6,7 +6,7 @@ using namespace std;
 void printArray(string label, const DynamicIntArray& ary);
 
 int main() {
-  /*
+
   // declare/define instance
   DynamicIntArray a;
   printArray("a", a);
@@ -17,6 +17,7 @@ int main() {
   DynamicIntArray c(5);
   printArray("c", c);
 
+
   c.at(2) = 2;
   c[0] = 9;
 
@@ -25,6 +26,11 @@ int main() {
   b.push_back(1);
 
   printArray("b", b);
+
+  a.push_back(5);
+  printArray("a", a);
+
+  /*
 
   DynamicIntArray d(b);
 
@@ -43,7 +49,6 @@ int main() {
 }
 
 void printArray(string label, const DynamicIntArray& ary) {
-/*
   cout << label << endl;
   if (ary.empty()) {
     cout << "Empty!" << endl;
@@ -53,5 +58,4 @@ void printArray(string label, const DynamicIntArray& ary) {
       cout << ary.at(i) << endl;
     }
   }
-    */
 }

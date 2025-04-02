@@ -43,8 +43,7 @@ int main() {
 }
 
 void printArray(string label, const DynamicIntArray& ary) {
-/*
-  cout << label << endl;
+/*  cout << label << endl;
   if (ary.empty()) {
     cout << "Empty!" << endl;
   }

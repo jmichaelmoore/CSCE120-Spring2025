@@ -8,6 +8,7 @@ class DynamicInt{
 public:
   DynamicInt() : val(new int(0)) {}
   DynamicInt(int val) : val(new int(val)) {}
+  ~DynamicInt();
   DynamicInt& operator=(int val);
   int get() const { return *val; }
 };

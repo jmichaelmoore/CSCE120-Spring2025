@@ -9,3 +9,8 @@ std::ostream& operator<<(std::ostream& os, const DynamicInt& src) {
   os << src.get();
   return os;
 }
+
+DynamicInt::~DynamicInt() {
+  delete val;
+  val = nullptr;
+}

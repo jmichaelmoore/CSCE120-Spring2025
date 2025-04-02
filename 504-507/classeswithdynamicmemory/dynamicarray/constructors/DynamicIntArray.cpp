@@ -25,3 +25,14 @@ void DynamicIntArray::increaseCapacity(size_t cap) {
     capacity = newcapacity;
     temp = nullptr;
 }
+
+DynamicIntArray::DynamicIntArray(size_t size, int val) :
+                ary(nullptr), size(size), capacity(0) {
+    if (size == 0) {
+        throw std::invalid_argument("size cannot be 0");
+    }
+    increaseCapacity(size);
+    for (unsigned int i=0; i<this->size; ++i) {
+        ary[i] = val;
+    }
+}
