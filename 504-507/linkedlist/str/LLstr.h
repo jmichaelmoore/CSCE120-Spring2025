@@ -7,7 +7,7 @@ struct Node {
     char letter;
     Node* next;
     Node* prev;
-    Node(int letter) : letter(letter), next(nullptr), prev(nullptr) {}
+    Node(int letter);
 };
 
 class LLstr {

@@ -4,29 +4,9 @@
 using std::cout, std::endl;
 
 void LLstr::insertFront(const char& val) {
-    Node* newNode = new Node(val);
-    if (head == nullptr) { // empty list
-        head = newNode;
-        tail = newNode;
-    }
-    else { // head points to a node
-        newNode->next = head;
-        head->prev = newNode;
-        head = newNode;
-    }
 }
 
 void LLstr::insertBack(const char& val) {
-    Node* newNode = new Node(val);
-    if (tail == nullptr) { // empty list
-        head = newNode;
-        tail = newNode;
-    }
-    else { // tail points to a node
-        tail->next = newNode;
-        newNode->prev = tail;
-        tail = newNode;
-    }
 }
 
 void LLstr::print(std::ostream& os) const {

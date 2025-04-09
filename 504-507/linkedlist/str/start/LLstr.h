@@ -16,7 +16,7 @@ class LLstr {
     Node* find(const int& val);
   public:
     //constructors & deconstructor
-    LLstr() : head(nullptr), tail(nullptr); // default constructor
+    LLstr(); // default constructor
     LLstr(const std::string&); // copy std::string
     LLstr(const char*); // copy c-string
 
