@@ -22,9 +22,9 @@ void LLstr::insertBack(const char& val) {
         head = newNode;
         tail = newNode;
     }
-    else { // tail points to a node
-        tail->next = newNode;
+    else { // head points to a node
         newNode->prev = tail;
+        tail->next = newNode;
         tail = newNode;
     }
 }
