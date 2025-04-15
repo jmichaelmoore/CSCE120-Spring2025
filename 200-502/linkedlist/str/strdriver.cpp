@@ -14,7 +14,6 @@ void printTest(std::string label, const LLstr& l) {
 }
 
 int main() {
-    /*
     LLstr s1;
     printTest("s1: construct", s1);
     s1.insertFront('a');
@@ -35,6 +34,7 @@ int main() {
     cout << "s3 has z: " << s3.hasChar('z') << endl;
     s3.insertAfter('=','r');
     printTest("s3: add = after r",s3);
+    /*
     s3.insertBefore('?','o');
     printTest("s3: add ? before o", s3);
     s3.insertAfter('+','z');

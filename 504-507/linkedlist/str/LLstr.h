@@ -7,13 +7,13 @@ struct Node {
     char letter;
     Node* next;
     Node* prev;
-    Node(int letter);
+    Node(char letter) : letter(letter), next(nullptr), prev(nullptr) {}
 };
 
 class LLstr {
     Node* head;
     Node* tail;
-    Node* find(const int& val);
+    Node* find(const char& val);
   public:
     //constructors & deconstructor
     LLstr() : head(nullptr), tail(nullptr) {} // default constructor

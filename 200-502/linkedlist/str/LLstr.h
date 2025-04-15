@@ -13,10 +13,10 @@ struct Node {
 class LLstr {
     Node* head;
     Node* tail;
-    Node* find(const int& val);
+    Node* find(const char& val);
   public:
     //constructors & deconstructor
-    LLstr() : head(nullptr), tail(nullptr); // default constructor
+    LLstr() : head(nullptr), tail(nullptr) {} // default constructor
     LLstr(const std::string&); // copy std::string
     LLstr(const char*); // copy c-string
 
