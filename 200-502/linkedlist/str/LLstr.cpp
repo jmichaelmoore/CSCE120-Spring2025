@@ -68,6 +68,7 @@ LLstr::LLstr(const char* src) : head(nullptr), tail(nullptr) { // copy c-string
 
 std::ostream& operator<<(std::ostream& os, const LLstr& src) {
     src.print(os);
+    return os;
 }
 
 Node* LLstr::find(const char& val) {
