@@ -105,28 +105,43 @@ char LLstr::peekBack() const {
 }
 
 void LLstr::insertAfter(const char& valToAdd, const char& valToFind) {
-    if (head != nullptr) {
-        Node* cur = head;
-        while (cur != nullptr && cur->letter != valToFind) {
-            cur = cur->next;
-        }
-        if (cur == nullptr) {
-            throw std::domain_error("Did not find value to add after");
-        }
-        Node* newNode = new Node(valToAdd);
-        newNode->next = cur->next;
-        newNode->prev = cur;
-        cur->next = newNode;
-        if (cur == tail) {
-            tail = newNode;
-        }
+    Node* cur = head;
+    while (cur != nullptr && cur->letter != valToFind) {
+        cur = cur->next;
+    }
+    if (cur == nullptr) {
+        throw std::domain_error("Did not find value to add after");
+    }
+    Node* newNode = new Node(valToAdd);
+    newNode->next = cur->next;
+    newNode->prev = cur;
+    cur->next = newNode;
+    if (cur == tail) {
+        tail = newNode;
     }
     else {
-        throw std::invalid_argument("Cannot add after in empty list");
+        newNode->next->prev = newNode;
     }
 }
 
 void LLstr::insertBefore(const char& valToAdd, const char& valToFind) {
+    Node* cur = head;
+    while (cur != nullptr && cur->letter != valToFind) {
+        cur = cur->next;
+    }
+    if (cur == nullptr) {
+        throw std::domain_error("Unable to find number to add before");
+    }
+    Node* newNode = new Node(valToAdd);
+    newNode->next = cur;
+    newNode->prev = cur->prev;
+    if (cur->prev == nullptr) { // new head
+        head = newNode;
+    }
+    else {
+        cur->prev->next = newNode;
+    }
+    cur->prev = newNode;
 }
 
 void LLstr::remove(const char& c) {

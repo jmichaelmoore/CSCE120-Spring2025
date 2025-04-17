@@ -118,6 +118,23 @@ void LLstr::insertAfter(const char& valToAdd, const char& valToFind) {
 }
 
 void LLstr::insertBefore(const char& valToAdd, const char& valToFind) {
+    Node* cur = head;
+    while (cur != nullptr && cur->letter != valToFind) {
+        cur = cur->next;
+    }
+    if (cur == nullptr) {
+        throw std::domain_error("Unable to find value to add before");
+    }
+    Node* newNode = new Node(valToAdd);
+    newNode->prev = cur->prev;
+    newNode->next = cur;
+    if (cur->prev == nullptr) { // new head
+        head = newNode;
+    }
+    else {
+        cur->prev->next = newNode;
+    }
+    cur->prev = newNode; // newNode->prev->next
 }
 
 void LLstr::remove(const char& c) {

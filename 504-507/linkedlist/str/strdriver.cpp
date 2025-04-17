@@ -34,13 +34,23 @@ int main() {
     cout << "s3 has z: " << s3.hasChar('z') << endl;
     s3.insertAfter('=','r');
     printTest("s3: add = after r",s3);
-    /*
     s3.insertBefore('?','o');
     printTest("s3: add ? before o", s3);
+    try {
     s3.insertAfter('+','z');
     printTest("s3: insert + after z", s3);
-    s3.insertBefore('-','z');
-    printTest("s3: insert - before z", s3);
+    }
+    catch (std::exception& e) {
+        cout << "Exception caught: " << e.what() << endl;
+    }
+    try {
+        s3.insertBefore('-','z');
+        printTest("s3: insert - before z", s3);
+    }
+    catch (std::exception& e) {
+        cout << "Exception caught: " << e.what() << endl;
+    }
+    /*
     s3.remove('W');
     printTest("s3: remove W", s3);
     s3.remove('-');

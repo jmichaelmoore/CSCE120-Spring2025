@@ -64,15 +64,57 @@ void LLint::insertAfter(const int& valToInsert, const int& valToFind) {
 }
 
 void LLint::insertBefore(const int& valToInsert, const int& valToFind) {
-
+    Node* cur = head;
+    Node* prev = nullptr;
+    while (cur != nullptr && cur->data != valToFind) {
+        prev = cur;
+        cur = cur->next;
+    }
+    if (cur == nullptr) {
+        throw std::domain_error("Unable to find number to insert before.");
+    }
+    Node* newNode = new Node(valToInsert);
+    newNode->next = cur;
+    if (prev == nullptr) { // new head
+        head = newNode;
+    }
+    else {
+        prev->next = newNode;
+    }
 }
 
 void LLint::remove(const int& val) {
-
+    Node* cur = head;
+    Node* prev = nullptr;
+    while (cur != nullptr && cur->data != val) {
+        prev = cur;
+        cur = cur->next;
+    }
+    if (cur == nullptr) {
+        throw std::domain_error("Did not find value to remove");
+    }
+    if (prev != nullptr) {
+        prev->next = cur->next;
+    }
+    else {// removing head
+        head = cur->next; // set to nullptr if also tail
+    }
+    if (cur->next == nullptr) {
+        tail = nullptr;
+    }
+    delete cur;
 }
 
 void LLint::clear() {
-
+    Node* cur = head;
+    Node* delNode = nullptr;
+    while (cur != nullptr) {
+        delNode = cur;
+        cur = cur->next;
+        delete delNode;
+    }
+    head = nullptr;
+    tail = nullptr;
 }
 
 void LLint::print(std::ostream& os) const {
