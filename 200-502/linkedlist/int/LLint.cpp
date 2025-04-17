@@ -100,7 +100,7 @@ void LLint::remove(const int& val) {
         head = cur->next; // set to nullptr if also tail
     }
     if (cur->next == nullptr) {
-        tail = nullptr;
+        tail = prev;// originally set to nullptr in class, but should have been prev
     }
     delete cur;
 }
