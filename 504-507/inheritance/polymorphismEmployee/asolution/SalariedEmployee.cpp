@@ -1,6 +1,6 @@
 #include "SalariedEmployee.h"
 
-SalariedEmployee::SalariedEmployee()
+SalariedEmployee::SalariedEmployee() : Employee(), annual_salary(0)
 {
     //log("SalariedEmployee:SalariedEmployee()");
 }

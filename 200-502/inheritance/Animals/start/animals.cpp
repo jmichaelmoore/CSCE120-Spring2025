@@ -5,25 +5,25 @@ using std::cout, std::endl, std::string, std::vector;
 class Animal {
 public:
     virtual string said() {return "Animal said what?";}
-    virtual string eat() {return "and eats Salad";}
+    string eat() {return "and eats Salad";}
     virtual ~Animal() {}
 };
 
 class Griffin : public Animal {
 public:
-    string said() override {return "Griffin roars!";}
-    string eat() override {return "and eats whatever.";}
+    string said() {return "Griffin roars!";}
+    string eat()  {return "and eats whatever.";}
     virtual ~Griffin() {}
 };
 
 class Unicorn : public Animal {
 public:
-    string said() override {return "Unicorn sounds of chimes!";}
-    string eat() override {return "and eats rainbows.";}
+    string said() {return "Unicorn sounds of chimes!";}
+    string eat()  {return "and eats rainbows.";}
     virtual ~Unicorn() {}
 };
 
-int main () {
+int main (int argc, char * argv[]) {
     vector<Animal*> animals;
 
     Unicorn* unicorn = new Unicorn;

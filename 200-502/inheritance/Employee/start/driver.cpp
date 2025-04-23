@@ -3,15 +3,13 @@
 #include <string>
 using namespace std;
 
-struct Employee {
+struct HourlyEmployee{
     std::string first_name, last_name;
-};
-
-struct HourlyEmployee : Employee {
     double hourly_wage;
 };
 
-struct SalariedEmployee : Employee {
+struct SalariedEmployee {
+    std::string first_name, last_name;
     double annual_salary;
 };
 

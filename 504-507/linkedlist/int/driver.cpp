@@ -37,6 +37,8 @@ int main() {
     catch (std::exception& e) {
         cout << "Exception caught: " << e.what() << endl;
     }
+    cout << "print reverse" << endl;
+    ll_1.printreverse();
     ll_1.remove(8);
     printTest("ll_1: remove 8",ll_1);
     ll_1.remove(3);

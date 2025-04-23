@@ -1,6 +1,6 @@
 #include "HourlyEmployee.h"
 
-HourlyEmployee::HourlyEmployee()
+HourlyEmployee::HourlyEmployee() : Employee(), hourly_wage(0), weekly_hours(0)
 {
     //log("HourlyEmployee:HourlyEmployee()");
 }

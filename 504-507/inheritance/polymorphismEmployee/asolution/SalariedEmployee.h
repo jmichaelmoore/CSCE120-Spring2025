@@ -10,7 +10,7 @@ public:
     SalariedEmployee();
     SalariedEmployee(const std::string&, const std::string&, double);
     SalariedEmployee& operator=(const SalariedEmployee&);
-    std::string to_str() const; // hides Employee's to_str()
+    std::string to_str() const override; // hides Employee's to_str()
     double get_annual_pay() const {return annual_salary;}
 private:
     double annual_salary;

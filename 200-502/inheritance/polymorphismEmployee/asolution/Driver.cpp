@@ -6,7 +6,7 @@
 #include "SalariedEmployee.h"
 using namespace std;
 
-int main (int argc, char * argv[])
+int main ()
 {
     HourlyEmployee h1("Jill", "Williamson", 20.0, 40);
     cout << h1 << endl;
@@ -19,7 +19,8 @@ int main (int argc, char * argv[])
     vector<Employee*> employees;
     employees.push_back(&h1);
     employees.push_back(&s1);
-    for (int i = 0; i < employees.size(); ++i) {
+    employees.push_back(&e1);
+    for (size_t i = 0; i < employees.size(); ++i) {
         string e = employees.at(i)->to_str();
         cout << e << endl;
         cout << endl;

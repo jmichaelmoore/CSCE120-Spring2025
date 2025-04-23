@@ -8,10 +8,11 @@ class Employee {
 public:
     Employee();
     Employee(const std::string&, const std::string&);
+    virtual ~Employee() {}
     Employee& operator=(const Employee&);
     std::string get_first_name() const {return first_name;}
     std::string get_last_name() const {return last_name;}
-    std::string to_str() const;
+    virtual std::string to_str() const;
 
     void log(const std::string& what) const;
 private:

@@ -13,6 +13,7 @@ class LLint {
     Node* head;
     Node* tail;
     Node* find(const int& val);
+    void printrec(Node* n, std::ostream&) const;
     
   public:
     LLint() : head(nullptr), tail(nullptr) {}
@@ -30,6 +31,8 @@ class LLint {
     void clear();
 
     void print(std::ostream& = std::cout) const;
+
+    void printreverse(std::ostream& = std::cout) const;
 };
 
 std::ostream& operator<<(std::ostream&, const LLint&);

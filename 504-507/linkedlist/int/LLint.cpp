@@ -125,8 +125,19 @@ void LLint::print(std::ostream& os) const {
         p = " -> ";
         cur = cur->next;
     }
-    if (head != nullptr)
+    if (cur != nullptr)
         os << " -|";
+}
+
+void LLint::printrec(Node* cur, std::ostream& os) const {
+    if (cur == nullptr)
+        return;
+    printrec(cur->next, os);
+    os << cur->data << endl;
+}
+
+void LLint::printreverse(std::ostream& os) const {
+    printrec(head, os);
 }
 
 std::ostream& operator<<(std::ostream& os, const LLint& src) {
